@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consulenza Strategica — Alessio Caruso Immobiliare</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+–blue: #1B6CA8;
+–blue-dark: #134f7d;
+–blue-mid: #1a5f95;
+–blue-light: #e8f2fa;
+–orange: #F5821F;
+–orange-light: #fef3e8;
+–cream: #FAF8F4;
+–warm-white: #FFFDF9;
+–text: #1a1a1a;
+–text-mid: #444;
+–text-light: #777;
+–border: #e5e0d8;
+–gold: #c9a84c;
+}
+
+html { scroll-behavior: smooth; }
+body {
+font-family: ‘DM Sans’, sans-serif;
+background: var(–cream);
+color: var(–text);
+overflow-x: hidden;
+}
+
+/* ── HERO ── */
+.hero {
+background: var(–blue-dark);
+background-image:
+radial-gradient(ellipse at 70% 30%, rgba(245,130,31,0.1) 0%, transparent 55%),
+radial-gradient(ellipse at 15% 80%, rgba(27,108,168,0.25) 0%, transparent 50%);
+min-height: 92vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+padding: 80px 6vw 60px;
+position: relative;
+overflow: hidden;
+}
+
+.hero::before {
+content: ‘’;
+position: absolute;
+top: 0; left: 0; right: 0;
+height: 4px;
+background: linear-gradient(90deg, var(–orange), #ffb347, var(–orange));
+}
+
+.hero::after {
+content: ‘’;
+position: absolute;
+bottom: -1px; left: 0; right: 0;
+height: 80px;
+background: linear-gradient(to top, var(–cream), transparent);
+pointer-events: none;
+}
+
+.hero-inner {
+max-width: 760px;
+animation: fadeUp 0.9s ease both;
+}
+
+.hero-eyebrow {
+display: inline-flex;
+align-items: center;
+gap: 10px;
+background: rgba(245,130,31,0.12);
+border: 1px solid rgba(245,130,31,0.3);
+color: #ffb347;
+font-size: 11px;
+font-weight: 600;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+padding: 7px 16px;
+border-radius: 24px;
+margin-bottom: 32px;
+}
+
+.hero-eyebrow::before {
+content: ‘’;
+width: 6px; height: 6px;
+border-radius: 50%;
+background: var(–orange);
+animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+0%, 100% { opacity: 1; transform: scale(1); }
+50% { opacity: 0.4; transform: scale(1.5); }
+}
+
+.hero h1 {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(2.4rem, 5vw, 4rem);
+font-weight: 900;
+color: #fff;
+line-height: 1.1;
+margin-bottom: 24px;
+}
+
+.hero h1 em {
+font-style: italic;
+color: var(–orange);
+}
+
+.hero-sub {
+font-family: ‘Source Serif 4’, serif;
+font-size: 1.1rem;
+color: rgba(255,255,255,0.65);
+line-height: 1.75;
+max-width: 580px;
+margin-bottom: 40px;
+}
+
+.hero-targets {
+display: flex;
+gap: 16px;
+flex-wrap: wrap;
+margin-bottom: 44px;
+}
+
+.target-pill {
+display: flex;
+align-items: center;
+gap: 10px;
+background: rgba(255,255,255,0.07);
+border: 1px solid rgba(255,255,255,0.14);
+border-radius: 10px;
+padding: 14px 20px;
+color: rgba(255,255,255,0.88);
+font-size: 0.9rem;
+line-height: 1.4;
+}
+
+.target-pill .pill-icon {
+font-size: 1.3rem;
+flex-shrink: 0;
+}
+
+.hero-cta {
+display: flex;
+align-items: center;
+gap: 20px;
+flex-wrap: wrap;
+}
+
+.btn-primary {
+display: inline-flex;
+align-items: center;
+gap: 10px;
+background: var(–orange);
+color: #fff;
+font-family: ‘DM Sans’, sans-serif;
+font-weight: 600;
+font-size: 1rem;
+padding: 17px 34px;
+border-radius: 6px;
+text-decoration: none;
+transition: all 0.2s;
+box-shadow: 0 4px 22px rgba(245,130,31,0.38);
+}
+
+.btn-primary:hover {
+background: #e06e0a;
+transform: translateY(-2px);
+box-shadow: 0 8px 30px rgba(245,130,31,0.48);
+}
+
+.hero-note {
+font-size: 0.82rem;
+color: rgba(255,255,255,0.38);
+display: flex;
+align-items: center;
+gap: 6px;
+}
+
+.hero-note::before { content: ‘🔒’; font-size: 0.85rem; }
+
+/* ── PROOF BAR ── */
+.proof-bar {
+background: var(–warm-white);
+border-bottom: 1px solid var(–border);
+padding: 18px 6vw;
+display: flex;
+align-items: center;
+gap: 40px;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+.proof-item {
+display: flex;
+align-items: center;
+gap: 10px;
+font-size: 0.87rem;
+color: var(–text-mid);
+}
+
+.proof-item .icon { font-size: 1.1rem; }
+.proof-item strong { color: var(–text); font-weight: 600; }
+
+/* ── SECTIONS ── */
+section { padding: 84px 6vw; }
+
+.section-label {
+font-size: 0.72rem;
+font-weight: 600;
+letter-spacing: 0.14em;
+text-transform: uppercase;
+color: var(–orange);
+margin-bottom: 12px;
+}
+
+.section-title {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(1.8rem, 3vw, 2.6rem);
+font-weight: 700;
+color: var(–text);
+line-height: 1.2;
+margin-bottom: 18px;
+}
+
+.section-title em { font-style: italic; color: var(–blue); }
+
+.section-intro {
+font-family: ‘Source Serif 4’, serif;
+font-size: 1.03rem;
+color: var(–text-mid);
+line-height: 1.78;
+max-width: 600px;
+margin-bottom: 48px;
+}
+
+/* ── PER CHI È ── */
+.perchi-section { background: var(–warm-white); }
+
+.perchi-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 24px;
+max-width: 900px;
+}
+
+.perchi-card {
+background: #fff;
+border: 1px solid var(–border);
+border-radius: 14px;
+padding: 32px;
+position: relative;
+overflow: hidden;
+}
+
+.perchi-card.si::before {
+content: ‘’;
+position: absolute;
+top: 0; left: 0; right: 0;
+height: 4px;
+background: var(–blue);
+}
+
+.perchi-card.no::before {
+content: ‘’;
+position: absolute;
+top: 0; left: 0; right: 0;
+height: 4px;
+background: #e0d5c8;
+}
+
+.perchi-card h3 {
+font-family: ‘Playfair Display’, serif;
+font-size: 1.05rem;
+font-weight: 700;
+margin-bottom: 20px;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.perchi-card.si h3 { color: var(–blue); }
+.perchi-card.no h3 { color: var(–text-light); }
+
+.perchi-list {
+list-style: none;
+display: flex;
+flex-direction: column;
+gap: 12px;
+}
+
+.perchi-list li {
+display: flex;
+align-items: flex-start;
+gap: 12px;
+font-size: 0.9rem;
+color: var(–text-mid);
+line-height: 1.5;
+}
+
+.perchi-list li::before {
+flex-shrink: 0;
+margin-top: 1px;
+font-size: 0.9rem;
+}
+
+.perchi-card.si .perchi-list li::before { content: ‘✓’; color: var(–blue); font-weight: 700; }
+.perchi-card.no .perchi-list li::before { content: ‘✕’; color: #bbb; font-weight: 700; }
+
+/* ── COME FUNZIONA ── */
+.funziona-section { background: var(–cream); }
+
+.steps-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 24px;
+max-width: 860px;
+position: relative;
+}
+
+.steps-grid::before {
+content: ‘’;
+position: absolute;
+top: 36px;
+left: calc(16.66% + 20px);
+right: calc(16.66% + 20px);
+height: 2px;
+background: linear-gradient(90deg, var(–blue), var(–orange));
+z-index: 0;
+}
+
+.step-card {
+background: #fff;
+border: 1px solid var(–border);
+border-radius: 14px;
+padding: 32px 24px 28px;
+text-align: center;
+position: relative;
+z-index: 1;
+transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.step-card:hover {
+transform: translateY(-4px);
+box-shadow: 0 14px 36px rgba(0,0,0,0.07);
+}
+
+.step-num {
+width: 52px;
+height: 52px;
+border-radius: 50%;
+background: var(–blue-dark);
+color: #fff;
+font-family: ‘Playfair Display’, serif;
+font-size: 1.3rem;
+font-weight: 900;
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 0 auto 20px;
+border: 3px solid var(–cream);
+box-shadow: 0 0 0 2px var(–blue);
+}
+
+.step-card:last-child .step-num {
+background: var(–orange);
+box-shadow: 0 0 0 2px var(–orange);
+}
+
+.step-card h3 {
+font-family: ‘Playfair Display’, serif;
+font-size: 1rem;
+font-weight: 700;
+color: var(–text);
+margin-bottom: 10px;
+}
+
+.step-card p {
+font-size: 0.87rem;
+color: var(–text-mid);
+line-height: 1.6;
+}
+
+.step-tag {
+display: inline-block;
+background: var(–orange-light);
+color: var(–orange);
+font-size: 0.7rem;
+font-weight: 600;
+letter-spacing: 0.06em;
+text-transform: uppercase;
+padding: 3px 10px;
+border-radius: 20px;
+margin-bottom: 14px;
+}
+
+/* ── PACCHETTI ── */
+.pacchetti-section { background: var(–blue-dark); position: relative; overflow: hidden; }
+
+.pacchetti-section::before {
+content: ‘’;
+position: absolute;
+top: -60px; right: -60px;
+width: 400px; height: 400px;
+border-radius: 50%;
+background: radial-gradient(circle, rgba(245,130,31,0.08) 0%, transparent 70%);
+pointer-events: none;
+}
+
+.pacchetti-section .section-title { color: #fff; }
+.pacchetti-section .section-intro { color: rgba(255,255,255,0.6); }
+
+.pacchetti-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 20px;
+max-width: 980px;
+}
+
+.pacchetto {
+background: rgba(255,255,255,0.05);
+border: 1px solid rgba(255,255,255,0.1);
+border-radius: 16px;
+overflow: hidden;
+transition: transform 0.2s;
+position: relative;
+}
+
+.pacchetto:hover { transform: translateY(-4px); }
+
+.pacchetto.featured {
+background: rgba(255,255,255,0.09);
+border-color: var(–orange);
+box-shadow: 0 0 0 1px var(–orange), 0 24px 60px rgba(0,0,0,0.3);
+}
+
+.featured-badge {
+background: var(–orange);
+color: #fff;
+font-size: 0.7rem;
+font-weight: 700;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+text-align: center;
+padding: 7px;
+}
+
+.pacchetto-header {
+padding: 28px 28px 20px;
+border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.pacchetto-name {
+font-family: ‘Playfair Display’, serif;
+font-size: 1.2rem;
+font-weight: 700;
+color: #fff;
+margin-bottom: 6px;
+}
+
+.pacchetto-desc {
+font-size: 0.82rem;
+color: rgba(255,255,255,0.45);
+line-height: 1.5;
+}
+
+.pacchetto-price {
+padding: 20px 28px;
+border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.price-amount {
+font-family: ‘Playfair Display’, serif;
+font-size: 2.6rem;
+font-weight: 900;
+color: #fff;
+line-height: 1;
+}
+
+.price-amount sup {
+font-size: 1.1rem;
+vertical-align: super;
+color: rgba(255,255,255,0.6);
+}
+
+.pacchetto.featured .price-amount { color: var(–orange); }
+
+.price-note {
+font-size: 0.75rem;
+color: rgba(255,255,255,0.35);
+margin-top: 4px;
+}
+
+.pacchetto-features {
+padding: 20px 28px 28px;
+display: flex;
+flex-direction: column;
+gap: 11px;
+}
+
+.feature-item {
+display: flex;
+align-items: flex-start;
+gap: 10px;
+font-size: 0.87rem;
+color: rgba(255,255,255,0.75);
+line-height: 1.45;
+}
+
+.feature-item::before {
+content: ‘✓’;
+color: var(–orange);
+font-weight: 700;
+font-size: 0.85rem;
+flex-shrink: 0;
+margin-top: 1px;
+}
+
+.pacchetto-cta {
+padding: 0 28px 28px;
+}
+
+.btn-pacchetto {
+display: block;
+width: 100%;
+text-align: center;
+padding: 14px;
+border-radius: 8px;
+font-weight: 600;
+font-size: 0.93rem;
+text-decoration: none;
+transition: all 0.2s;
+border: none;
+cursor: pointer;
+}
+
+.btn-pacchetto.outline {
+background: transparent;
+border: 1px solid rgba(255,255,255,0.2);
+color: rgba(255,255,255,0.75);
+}
+
+.btn-pacchetto.outline:hover {
+border-color: rgba(255,255,255,0.5);
+color: #fff;
+background: rgba(255,255,255,0.06);
+}
+
+.btn-pacchetto.filled {
+background: var(–orange);
+color: #fff;
+box-shadow: 0 4px 18px rgba(245,130,31,0.35);
+}
+
+.btn-pacchetto.filled:hover {
+background: #e06e0a;
+transform: translateY(-1px);
+box-shadow: 0 8px 24px rgba(245,130,31,0.45);
+}
+
+/* Add-on */
+.addon-box {
+max-width: 980px;
+margin-top: 24px;
+background: rgba(255,255,255,0.04);
+border: 1px dashed rgba(255,255,255,0.15);
+border-radius: 12px;
+padding: 20px 28px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 20px;
+flex-wrap: wrap;
+}
+
+.addon-left { display: flex; align-items: center; gap: 16px; }
+.addon-icon { font-size: 1.6rem; }
+
+.addon-text h4 {
+font-family: ‘Playfair Display’, serif;
+font-size: 0.95rem;
+color: #fff;
+margin-bottom: 4px;
+}
+
+.addon-text p {
+font-size: 0.82rem;
+color: rgba(255,255,255,0.45);
+}
+
+.addon-price {
+font-family: ‘Playfair Display’, serif;
+font-size: 1.4rem;
+font-weight: 900;
+color: rgba(255,255,255,0.6);
+white-space: nowrap;
+}
+
+.addon-price span {
+font-family: ‘DM Sans’, sans-serif;
+font-size: 0.75rem;
+font-weight: 400;
+display: block;
+color: rgba(255,255,255,0.3);
+text-align: right;
+}
+
+/* ── AUTHOR ── */
+.author-section {
+background: var(–warm-white);
+}
+
+.author-inner {
+display: grid;
+grid-template-columns: auto 1fr;
+gap: 48px;
+align-items: start;
+max-width: 760px;
+}
+
+.author-avatar {
+width: 100px;
+height: 100px;
+border-radius: 50%;
+background: linear-gradient(135deg, var(–orange), #ffb347);
+display: flex;
+align-items: center;
+justify-content: center;
+font-family: ‘Playfair Display’, serif;
+font-size: 2rem;
+font-weight: 900;
+color: #fff;
+flex-shrink: 0;
+border: 3px solid var(–border);
+}
+
+.author-content h2 {
+font-family: ‘Playfair Display’, serif;
+font-size: 1.7rem;
+color: var(–text);
+margin-bottom: 14px;
+}
+
+.author-content p {
+font-family: ‘Source Serif 4’, serif;
+font-size: 0.97rem;
+color: var(–text-mid);
+line-height: 1.78;
+margin-bottom: 10px;
+}
+
+.author-stats {
+display: flex;
+gap: 28px;
+margin-top: 22px;
+flex-wrap: wrap;
+}
+
+.stat-num {
+font-family: ‘Playfair Display’, serif;
+font-size: 1.7rem;
+font-weight: 900;
+color: var(–orange);
+display: block;
+}
+
+.stat-label { font-size: 0.76rem; color: var(–text-light); }
+
+/* ── FAQ ── */
+.faq-section { background: var(–cream); }
+.faq-list { max-width: 680px; }
+
+.faq-item {
+border-bottom: 1px solid var(–border);
+padding: 22px 0;
+}
+
+.faq-q {
+font-weight: 600;
+font-size: 0.95rem;
+color: var(–text);
+margin-bottom: 10px;
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+gap: 16px;
+cursor: pointer;
+}
+
+.faq-q::after {
+content: ‘+’;
+color: var(–blue);
+font-size: 1.4rem;
+font-weight: 300;
+flex-shrink: 0;
+line-height: 1.2;
+}
+
+.faq-a {
+font-family: ‘Source Serif 4’, serif;
+font-size: 0.92rem;
+color: var(–text-mid);
+line-height: 1.72;
+}
+
+/* ── FINAL CTA ── */
+.final-cta {
+background: var(–blue-dark);
+text-align: center;
+padding: 90px 6vw;
+position: relative;
+overflow: hidden;
+}
+
+.final-cta::before {
+content: ‘’;
+position: absolute;
+top: 0; left: 0; right: 0;
+height: 4px;
+background: linear-gradient(90deg, var(–orange), #ffb347, var(–orange));
+}
+
+.final-cta h2 {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(1.9rem, 3.5vw, 2.9rem);
+color: #fff;
+margin-bottom: 18px;
+line-height: 1.2;
+}
+
+.final-cta h2 span { color: var(–orange); }
+
+.final-cta p {
+font-family: ‘Source Serif 4’, serif;
+font-size: 1rem;
+color: rgba(255,255,255,0.58);
+max-width: 500px;
+margin: 0 auto 36px;
+line-height: 1.72;
+}
+
+.limited-note {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+background: rgba(245,130,31,0.12);
+border: 1px solid rgba(245,130,31,0.25);
+color: rgba(255,255,255,0.55);
+font-size: 0.8rem;
+padding: 8px 18px;
+border-radius: 20px;
+margin-top: 20px;
+}
+
+.limited-note::before { content: ‘⏳’; }
+
+/* ── FOOTER ── */
+footer {
+background: #0d2d42;
+padding: 28px 6vw;
+text-align: center;
+font-size: 0.78rem;
+color: rgba(255,255,255,0.32);
+line-height: 1.8;
+}
+
+footer a { color: rgba(255,255,255,0.45); text-decoration: none; }
+footer a:hover { color: var(–orange); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(28px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+opacity: 0;
+transform: translateY(22px);
+transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+.hero { min-height: auto; padding: 70px 5vw 60px; }
+.hero-targets { flex-direction: column; }
+.perchi-grid { grid-template-columns: 1fr; }
+.steps-grid { grid-template-columns: 1fr; }
+.steps-grid::before { display: none; }
+.pacchetti-grid { grid-template-columns: 1fr; }
+.author-inner { grid-template-columns: 1fr; text-align: center; gap: 20px; }
+.author-avatar { margin: 0 auto; }
+.author-stats { justify-content: center; }
+.addon-box { flex-direction: column; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- HERO -->
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Consulenza Strategica Immobiliare</div>
+    <h1>Parti avvantaggiato.<br><em>Vendi al meglio.</em></h1>
+    <p class="hero-sub">Una sessione strategica per chiarire la tua situazione, correggere la rotta e sapere esattamente cosa fare — prima di perdere tempo e opportunità sul mercato.</p>
+
+```
+<div class="hero-targets">
+  <div class="target-pill">
+    <span class="pill-icon">🏠</span>
+    <span><strong>Stai per mettere in vendita</strong> — vuoi partire con la strategia giusta dal primo giorno</span>
+  </div>
+  <div class="target-pill">
+    <span class="pill-icon">📉</span>
+    <span><strong>Sei già sul mercato</strong> — hai l'annuncio attivo ma i risultati non arrivano</span>
+  </div>
+</div>
+
+<div class="hero-cta">
+  <a href="#pacchetti" class="btn-primary">Scegli il tuo pacchetto →</a>
+  <span class="hero-note">Posti limitati ogni mese</span>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- PROOF BAR -->
+
+<div class="proof-bar">
+  <div class="proof-item"><span class="icon">⭐</span><span><strong>34 recensioni</strong> su Google</span></div>
+  <div class="proof-item"><span class="icon">🏠</span><span><strong>70+ transazioni</strong> gestite</span></div>
+  <div class="proof-item"><span class="icon">💶</span><span><strong>8M€+</strong> compravenduti</span></div>
+  <div class="proof-item"><span class="icon">📍</span><span><strong>Civitanova Marche</strong> e dintorni</span></div>
+</div>
+
+<!-- PER CHI È -->
+
+<section class="perchi-section fade-in">
+  <div class="section-label">Prima di prenotare</div>
+  <h2 class="section-title">È la consulenza giusta <em>per te?</em></h2>
+  <p class="section-intro">Lavoro con chi è disposto a ragionare sulla propria situazione con apertura. Non è una valutazione generica — è un lavoro su misura.</p>
+
+  <div class="perchi-grid">
+    <div class="perchi-card si">
+      <h3>✓ &nbsp;Fa per te se...</h3>
+      <ul class="perchi-list">
+        <li>Stai per mettere in vendita e vuoi partire nel modo giusto</li>
+        <li>Sei già sul mercato ma non stai ottenendo i risultati che ti aspetti</li>
+        <li>Vuoi capire il vero valore del tuo immobile prima di decidere il prezzo</li>
+        <li>Sei aperto ad ascoltare una prospettiva esterna e, se necessario, cambiare strategia</li>
+      </ul>
+    </div>
+    <div class="perchi-card no">
+      <h3>✕ &nbsp;Non fa per te se...</h3>
+      <ul class="perchi-list">
+        <li>Hai già deciso tutto e cerchi solo una conferma a quello che pensi</li>
+        <li>Non sei disposto a riconsiderare il prezzo o la strategia di vendita</li>
+        <li>Cerchi garanzie di risultato che nessun consulente onesto può darti</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- COME FUNZIONA -->
+
+<section class="funziona-section fade-in">
+  <div class="section-label">Il processo</div>
+  <h2 class="section-title">Come funziona <em>in tre passi</em></h2>
+  <p class="section-intro">Nessuna burocrazia. Scegli il pacchetto, prenota la call, e in pochi giorni hai un piano chiaro su come procedere.</p>
+
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <span class="step-tag">Facoltativo</span>
+      <h3>Leggi la guida</h3>
+      <p>Se non l'hai ancora fatto, la Guida "Vendere Casa Senza Errori" ti prepara prima della call — così partiamo già allineati.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <span class="step-tag" style="background:var(--blue-light);color:var(--blue);">Obbligatorio</span>
+      <h3>Prenota e compila il form</h3>
+      <p>Scegli il pacchetto, prenota la call e rispondi a poche domande sulla tua situazione. Così arrivo preparato.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <span class="step-tag">Il momento chiave</span>
+      <h3>La call strategica</h3>
+      <p>Analizziamo la tua situazione specifica — prezzo, documenti, mercato locale — e costruiamo insieme la strategia giusta per te.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PACCHETTI -->
+
+<section class="pacchetti-section fade-in" id="pacchetti">
+  <div class="section-label">Scegli il tuo pacchetto</div>
+  <h2 class="section-title">Tre livelli di <em>supporto</em></h2>
+  <p class="section-intro">Scegli in base alla complessità della tua situazione. Puoi sempre aggiornare dopo la prima call.</p>
+
+  <div class="pacchetti-grid">
+
+```
+<!-- BASE -->
+<div class="pacchetto">
+  <div class="pacchetto-header">
+    <div class="pacchetto-name">Base</div>
+    <div class="pacchetto-desc">Per chi vuole un primo orientamento chiaro e operativo</div>
+  </div>
+  <div class="pacchetto-price">
+    <div class="price-amount"><sup>€</sup>49</div>
+    <div class="price-note">Pagamento unico</div>
+  </div>
+  <div class="pacchetto-features">
+    <div class="feature-item">Call strategica da 30 minuti</div>
+    <div class="feature-item">Analisi della tua situazione</div>
+    <div class="feature-item">Consiglio operativo personalizzato</div>
+    <div class="feature-item">Visura catastale inclusa</div>
+  </div>
+  <div class="pacchetto-cta">
+    <a href="#" class="btn-pacchetto outline">Prenota — 49€</a>
+  </div>
+</div>
+
+<!-- AVANZATO -->
+<div class="pacchetto featured">
+  <div class="featured-badge">⭐ Più scelto</div>
+  <div class="pacchetto-header">
+    <div class="pacchetto-name">Avanzato</div>
+    <div class="pacchetto-desc">Per chi vuole una strategia completa e seguita nel tempo</div>
+  </div>
+  <div class="pacchetto-price">
+    <div class="price-amount"><sup>€</sup>149</div>
+    <div class="price-note">Pagamento unico</div>
+  </div>
+  <div class="pacchetto-features">
+    <div class="feature-item">3 call strategiche</div>
+    <div class="feature-item">Analisi della situazione</div>
+    <div class="feature-item">Analisi delle criticità</div>
+    <div class="feature-item">Strategia personalizzata</div>
+  </div>
+  <div class="pacchetto-cta">
+    <a href="#" class="btn-pacchetto filled">Prenota — 149€</a>
+  </div>
+</div>
+
+<!-- PREMIUM -->
+<div class="pacchetto">
+  <div class="pacchetto-header">
+    <div class="pacchetto-name">Premium</div>
+    <div class="pacchetto-desc">Per chi vuole supporto completo fino alla negoziazione</div>
+  </div>
+  <div class="pacchetto-price">
+    <div class="price-amount"><sup>€</sup>490</div>
+    <div class="price-note">Pagamento unico</div>
+  </div>
+  <div class="pacchetto-features">
+    <div class="feature-item">Analisi completa dell'immobile</div>
+    <div class="feature-item">Strategia di vendita su misura</div>
+    <div class="feature-item">Supporto al marketing</div>
+    <div class="feature-item">Supporto attivo in negoziazione</div>
+  </div>
+  <div class="pacchetto-cta">
+    <a href="#" class="btn-pacchetto outline">Prenota — 490€</a>
+  </div>
+</div>
+```
+
+  </div>
+
+  <!-- ADD-ON -->
+
+  <div class="addon-box">
+    <div class="addon-left">
+      <div class="addon-icon">💬</div>
+      <div class="addon-text">
+        <h4>Add-on — Supporto WhatsApp continuativo</h4>
+        <p>Hai una domanda urgente fuori dalla call? Sono disponibile via WhatsApp per supporto continuativo.</p>
+      </div>
+    </div>
+    <div class="addon-price">
+      €29<span>/mese</span>
+    </div>
+  </div>
+</section>
+
+<!-- AUTHOR -->
+
+<section class="author-section fade-in">
+  <div class="author-inner">
+    <div class="author-avatar">AC</div>
+    <div class="author-content">
+      <div class="section-label">Chi ti segue</div>
+      <h2>Alessio Caruso</h2>
+      <p>Agente immobiliare nelle Marche dal 2016. Ho lavorato con alcuni dei franchising più strutturati a livello nazionale e internazionale e ho gestito oltre 70 transazioni per un valore compravenduto superiore agli 8 milioni di euro.</p>
+      <p>Ogni consulenza è seguita direttamente da me. Nessun assistente, nessun processo standardizzato — solo un'analisi reale della tua situazione.</p>
+      <div class="author-stats">
+        <div class="stat"><span class="stat-num">70+</span><span class="stat-label">Transazioni gestite</span></div>
+        <div class="stat"><span class="stat-num">8M€+</span><span class="stat-label">Immobili compravenduti</span></div>
+        <div class="stat"><span class="stat-num">8+</span><span class="stat-label">Anni di esperienza</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+
+<section class="faq-section fade-in">
+  <div class="section-label">Dubbi frequenti</div>
+  <h2 class="section-title">Hai ancora <em>qualche domanda?</em></h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q">Non ho ancora deciso se vendere — ha senso prenotare?</div>
+      <p class="faq-a">Sì, anzi è il momento ideale. La consulenza ti aiuta proprio a capire se e come procedere, qual è il valore reale del tuo immobile e quali sono le condizioni del mercato. Partire informati è sempre meglio che scoprirlo a metà strada.</p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Ho già un agente immobiliare — posso comunque prenotare?</div>
+      <p class="faq-a">Assolutamente sì. La consulenza è indipendente da qualsiasi mandato. Ti offre una seconda prospettiva esterna — utile per valutare la strategia in corso o capire se stai lasciando soldi sul tavolo.</p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Devo aver letto la guida prima della call?</div>
+      <p class="faq-a">No, non è obbligatorio. Se l'hai letta, partiamo già allineati e usiamo il tempo della call in modo più efficace. Ma puoi prenotare anche senza — mi adatto alla tua situazione.</p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Cosa succede se la call non mi è utile?</div>
+      <p class="faq-a">Non accade spesso, ma se dopo la prima call senti che non è stata utile, scrivimi — troviamo insieme una soluzione. Lavoro su reputazione, non su volumi.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+
+<section class="final-cta fade-in">
+  <h2>Ogni mese lavoro con<br><span>un numero limitato di clienti.</span></h2>
+  <p>Per garantire a ciascuno la qualità e l'attenzione che merita, i posti disponibili ogni mese sono limitati.</p>
+  <a href="#pacchetti" class="btn-primary" style="margin: 0 auto;">Scegli il tuo pacchetto →</a>
+  <div class="limited-note">Posti limitati — per garantire un servizio eccellente</div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <p>© 2026 Alessio Caruso — Agente Immobiliare | Civitanova Marche e dintorni</p>
+  <p><a href="https://www.alessiocarusoimmobiliare.com">alessiocarusoimmobiliare.com</a> · <a href="#">Privacy Policy</a> · <a href="#">Termini e Condizioni</a></p>
+  <p style="margin-top:8px;font-size:0.72rem;opacity:0.6">La consulenza ha scopo informativo e strategico. Non sostituisce il parere di professionisti legali o tecnici abilitati.</p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
